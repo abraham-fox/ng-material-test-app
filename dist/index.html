@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Angular Material - Test App</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="">
+  <meta name="viewport" content="initial-scale=1" />
+  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,700'>
+  <link rel="stylesheet" href="./libs/angular-material.min.css" />
+  <link rel="stylesheet" href="assets/app.css" />
+</head>
+
+<body ng-app="testApp" layout="column" ng-controller="MainController as vm" ng-cloak>
+  <md-toolbar layout="row">
+    <md-button class="menu" hide-gt-sm ng-click="vm.toggleList()" aria-label="Show side navigation">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    <h1>Admin console</h1>
+    <span flex></span>
+
+    <md-input-container>
+      <md-select ng-model="vm.selectedLanguage" ng-model-options="{trackBy: '$value.id'}" aria-label="Select language">
+        <md-option ng-value="language" ng-repeat="language in vm.languages">{{ language.name }}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <md-button ng-click="vm.showLoginForm()" ng-hide="!!vm.loggedUser">
+      Log in
+    </md-button>
+
+    <md-menu ng-show="!!vm.loggedUser" flex="20">
+      <md-button ng-click="$mdOpenMenu($event)" aria-label="Open login menu">
+        <md-icon md-svg-icon="account"></md-icon>
+        {{vm.loggedUser.fullName}}
+      </md-button>
+      <md-menu-content>
+        <md-menu-item>
+          <md-button ng-click="alert('Not implemented')">Solutions</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="alert('Not implemented')">Settings</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="vm.loggedUser = null">Logout</md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+  </md-toolbar>
+
+  <div layout="row" flex>
+    <md-sidenav md-is-locked-open="false" md-component-id="mainSideNav" ng-click="vm.toggleList()" class="md-whiteframe-z2 sidenav-main"
+      tabindex="-1">
+
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <h2 class="md-flex">Main menu</h2>
+        </div>
+      </md-toolbar>
+
+      <md-list ng-repeat="menuItem in vm.menuItems" class="md-clickable">
+        <md-list-item>
+          <div class="p6n-section-highlight" ng-if="vm.isSelectedMenuItem(menuItem)"></div>
+          <a ui-sref="{{::menuItem.routerState}}" class="md-button md-ink-ripple md-cards-theme sidenav-item-link">
+            {{menuItem.name}}
+            </a>
+          <!--<md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>-->
+
+          </md-button>
+        </md-list-item>
+      </md-list>
+    </md-sidenav>
+
+
+    <md-content flex>
+      <div ui-view></div>
+    </md-content>
+  </div>
+
+  <script src="./libs/angular.min.js"></script>
+  <script src="./libs/angular-animate.min.js"></script>
+  <script src="./libs/angular-aria.min.js"></script>
+  <script src="./libs/angular-material.min.js"></script>
+  <script src="./libs/angular-ui-router.min.js"></script>
+
+  <script src="./src/users/users.module.js"></script>
+  <script src="./src/users/users.service.js"></script>
+  <script src="./src/login/login-form.controller.js"></script>
+  <script src="./src/main.controller.js"></script>
+  <script src="./src/users/users.controller.js"></script>
+  <script src="./src/app.js"></script>
+
+</body>
+
+</html>
