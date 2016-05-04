@@ -1,0 +1,35 @@
+<div layout="row" flex>
+    <md-progress-linear md-mode="{{!vm.users.length ? 'indeterminate' : ''}}"></md-progress-linear>
+</div>
+
+<div layout="row" class="user-list" ng-cloak>
+    <md-sidenav md-is-locked-open="true" md-component-id="userList" class="sidebar-section" layout="column">
+        <md-toolbar class="md-toolbar-tools p6n-vulcan-toolbar">
+            <h5>User list</h5>
+        </md-toolbar>
+
+        <md-list ng-repeat="user in vm.users">
+            <md-list-item>
+                <md-button ng-click="vm.selectUser(user)" md-ripple-size="partial" ng-class="{'selected' : user === vm.selectedUser}">
+                    <md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>
+                    {{user.name}}
+                </md-button>
+            </md-list-item>
+        </md-list>
+    </md-sidenav>
+
+    <md-content flex>
+        <md-toolbar class="md-toolbar-tools p6n-vulcan-toolbar">
+            <h5>User details</h5>
+        </md-toolbar>
+        <div id="content">
+            <md-icon md-svg-icon="{{vm.selectedUser.avatar}}" class="avatar"></md-icon>
+            <h2>{{vm.selectedUser.name}}</h2>
+            <p>{{vm.selectedUser.content}}</p>
+
+            <md-button class="shared" md-no-ink ng-click="vm.makeContact(vm.selectedUser)" aria-label="Share with {{ vm.selectedUser.name}}">
+                <md-icon md-svg-icon="share"></md-icon>
+            </md-button>
+        </div>
+    </md-content>
+</div>
