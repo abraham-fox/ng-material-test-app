@@ -16,8 +16,6 @@
                 .accentPalette('red');
 
             // ui-router
-
-            // For any unmatched url, redirect to /state1
             $urlRouterProvider.otherwise('/dashboard');
 
             $stateProvider
@@ -30,13 +28,6 @@
                 .state('dashboard', {
                     url: '/dashboard',
                     templateUrl: 'src/dashboard/dashboard.html'
-                })
-                .state('state2.list', {
-                    url: '/list',
-                    templateUrl: 'src/app/state2.list.html',
-                    controller: function ($scope) {
-                        $scope.things = ['A', 'Set', 'Of', 'Things'];
-                    }
                 });
         })
 })();
