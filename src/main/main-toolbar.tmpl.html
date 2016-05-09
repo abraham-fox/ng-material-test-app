@@ -1,0 +1,37 @@
+<md-toolbar layout="row">
+    <md-button class="menu" ng-click="vm.toggleList()" aria-label="Show side navigation">
+      <md-icon md-svg-icon="menu"></md-icon>
+    </md-button>
+    
+    <h1>Admin console</h1>
+    <span flex></span>
+
+    <md-input-container>
+      <md-select ng-model="vm.selectedLanguage" ng-model-options="{trackBy: '$value.id'}" aria-label="Select language">
+        <md-option ng-value="language" ng-repeat="language in vm.languages">{{ language.name }}</md-option>
+      </md-select>
+    </md-input-container>
+
+    <md-button ng-click="vm.showLoginForm()" ng-hide="!!vm.loggedUser">
+      Log in
+    </md-button>
+
+    <md-menu ng-show="!!vm.loggedUser" flex="20">
+      <md-button ng-click="$mdOpenMenu($event)" aria-label="Open login menu">
+        <md-icon md-svg-icon="account"></md-icon>
+        {{vm.loggedUser.fullName}}
+      </md-button>
+      <md-menu-content>
+        <md-menu-item>
+          <md-button ng-click="alert('Not implemented')">Solutions</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="alert('Not implemented')">Settings</md-button>
+        </md-menu-item>
+        <md-menu-item>
+          <md-button ng-click="vm.loggedUser = null">Logout</md-button>
+        </md-menu-item>
+      </md-menu-content>
+    </md-menu>
+
+  </md-toolbar>

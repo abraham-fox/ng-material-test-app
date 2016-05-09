@@ -1,0 +1,21 @@
+<md-sidenav md-is-locked-open="false" md-component-id="mainSideNav" ng-click="vm.toggleList()" class="md-whiteframe-z2 sidenav-main"
+	tabindex="-1">
+
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 class="md-flex">Main menu</h2>
+		</div>
+	</md-toolbar>
+
+	<md-list ng-repeat="menuItem in vm.menuItems" class="md-clickable">
+		<md-list-item>
+			<div class="p6n-section-highlight" ng-if="vm.isSelectedMenuItem(menuItem)"></div>
+			<a ui-sref="{{::menuItem.routerState}}" class="md-button md-ink-ripple md-cards-theme sidenav-item-link">
+            {{menuItem.name}}
+            </a>
+			<!--<md-icon md-svg-icon="{{user.avatar}}" class="avatar"></md-icon>-->
+
+			</md-button>
+		</md-list-item>
+	</md-list>
+</md-sidenav>
