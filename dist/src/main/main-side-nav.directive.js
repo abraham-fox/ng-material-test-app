@@ -5,7 +5,7 @@
 		.directive('mainSideNav', MainSideNavDirective);
 
 	MainSideNavDirective.$inject = ['$mdSidenav', '$state'];
-	
+
 	function MainSideNavDirective() {
 		return {
 			templateUrl: 'src/main/main-side-nav.tmpl.html',
@@ -21,25 +21,32 @@
 	function MainSideNavController($mdSidenav, $state) {
 		var self = this;
 
-
-		self.menuItems = [
+		var menuData = [
 			{
 				name: 'Dashboard',
-				routerState: 'dashboard'
+				routerState: 'dashboard',
+				icon: 'dashboard'
 			},
 			{
 				name: 'User list',
-				routerState: 'userList'
+				routerState: 'userList',
+				icon: 'view-list'
 			}
-		];
+		]
+
+		self.keyword = '';
+
+		self.menuItems = menuData;
 
 		self.isSelectedMenuItem = function (menuItem) {
 			return $state.is(menuItem.routerState);
 		};
 
-		self.toggleList = function () {
+		self.toggleList = function (event) {
+			if (event.target.tagName === 'INPUT') return;
+
 			$mdSidenav('mainSideNav').toggle();
-		}
+		};
 	}
 
 })();
