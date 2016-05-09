@@ -177,3 +177,8 @@ md-toolbar md-input-container {
     font-weight: 500;
     font-size: 14px;
 }
+
+.sidenav-main .md-toolbar-tools{
+  background-color: white;
+  color: black;
+}
