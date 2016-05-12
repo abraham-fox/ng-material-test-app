@@ -28,9 +28,20 @@
 				icon: 'dashboard'
 			},
 			{
+				divider: true
+			},
+			{
 				name: 'User list',
 				routerState: 'userList',
 				icon: 'view-list'
+			},
+			{
+				name: 'Create new user',
+				routerState: 'creatUser',
+				icon: 'create'
+			},
+			{
+				divider: true
 			},
 			{
 				name: 'Order list',
