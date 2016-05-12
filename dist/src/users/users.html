@@ -2,7 +2,7 @@
     <md-progress-linear md-mode="{{!vm.users.length ? 'indeterminate' : ''}}"></md-progress-linear>
 </div>
 
-<div layout="row" class="user-list" ng-cloak>
+<div layout="row" class="user-list" ng-show="vm.users.length">
     <md-sidenav md-is-locked-open="true" md-component-id="userList" class="sidebar-section" layout="column">
         <md-toolbar class="md-toolbar-tools p6n-vulcan-toolbar">
             <h5>User list</h5>
