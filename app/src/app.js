@@ -1,6 +1,6 @@
 (function () {
     angular
-        .module('testApp', ['ngMaterial', 'ui.router', 'users'])
+        .module('testApp', ['ngMaterial', 'ui.router', 'users', 'testApp.Orders', 'md.data.table'])
         .config(function ($mdIconProvider, $mdThemingProvider, $stateProvider, $urlRouterProvider) {
             // Angular Material 
             $mdIconProvider
@@ -31,6 +31,18 @@
                 .state('dashboard', {
                     url: '/dashboard',
                     templateUrl: 'src/dashboard/dashboard.html'
+                })
+                .state('orderList', {
+                    url: '/orders-list',
+                    templateUrl: 'src/orders/list.html',
+                    controller: 'OrderController',
+                    controllerAs: 'vm'
+                })
+                .state('orderTable', {
+                    url: '/orders-table',
+                    templateUrl: 'src/orders/table.html',
+                    controller: 'OrderController',
+                    controllerAs: 'vm'
                 });
         })
 })();

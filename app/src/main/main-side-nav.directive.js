@@ -31,6 +31,16 @@
 				name: 'User list',
 				routerState: 'userList',
 				icon: 'view-list'
+			},
+			{
+				name: 'Order list',
+				routerState: 'orderList',
+				icon: 'view-list'
+			},
+			{
+				name: 'Order table',
+				routerState: 'orderTable',
+				icon: 'view-list'
 			}
 		]
 
