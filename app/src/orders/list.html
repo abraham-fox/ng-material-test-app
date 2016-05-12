@@ -2,17 +2,50 @@
 
 	<md-content>
 		<md-list>
-			<md-subheader class="md-no-sticky">Sub header</md-subheader>
+			<md-subheader class="md-no-sticky">Best clients</md-subheader>
 			<md-list-item class="md-3-line" ng-repeat="item in vm.data">
-				<div class="md-list-item-text" layout="column">
-					<h3>{{ item.firstName }} {{ item.lastName }}</h3>
-					<h4>{{ item.email }}</h4>
+				<div class="md-list-item-text" layout-xs="row" layout="row">
+					<div>
+						<md-icon md-svg-src="account" class="md-padding"></md-icon>
+					</div>
+					<div class="md-padding" layout-xs="column" layout="row" flex="80">
+						<div flex="30" flex-xs="100">
+							<h3>{{ item.firstName }} {{ item.lastName }}</h3>
+							<b>{{ item.gender }}</b>
+						</div>
+						<div flex="30" flex-xs="100">
+							<h4>{{ item.email }}</h4>
+						</div>
+						<div flex="10">
+							<b>{{ item.products[0].count }}</b>
+						</div>
+						<div flex="10">
+							<b>{{ item.products[0].price | currency}}</b>
+						</div>
+						<div layout="column">
+							<span ng-repeat="product in item.products">
+								{{product.name}}
+							</span>
+						</div>
+					</div>
+					<div flex></div>
+					<div>
+						<md-card-actions layout-xs="column">
+							<md-button class="md-icon-button" aria-label="Favorite">
+								<md-icon md-svg-icon="favorite"></md-icon>
+							</md-button>
+							<md-button class="md-icon-button" aria-label="Settings">
+								<md-icon md-svg-icon="menu"></md-icon>
+							</md-button>
+							<md-button class="md-icon-button" aria-label="Share">
+								<md-icon md-svg-icon="share"></md-icon>
+							</md-button>
+						</md-card-actions>
+					</div>
 				</div>
+				<md-divider ng-if="!$last"></md-divider>
 			</md-list-item>
-			<md-divider></md-divider>
 		</md-list>
 	</md-content>
-	
-	
-	
+
 </div>
