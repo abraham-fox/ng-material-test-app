@@ -6,60 +6,73 @@
 
 <md-content layout-xs="column" layout="row" class="carddemoBasicUsage">
     <md-content class="md-padding" layout-xs="column" layout="row">
-      
-            <md-card>
-                <md-card-title>
-                    <md-card-title-text>
-                        <span class="md-headline">Card with  image</span>
-                        <span class="md-subhead">Extra Large</span>
-                    </md-card-title-text>
-                </md-card-title>
-                <md-card-content layout="row" layout-align="space-between">
-                    <div class="md-media-xl card-media"></div>
-                    <md-card-actions layout="column">
-                        <md-button class="md-icon-button" aria-label="Favorite">
-                            <md-icon md-svg-icon="favorite"></md-icon>
-                        </md-button>
-                        <md-button class="md-icon-button" aria-label="Settings">
-                            <md-icon md-svg-icon="menu"></md-icon>
-                        </md-button>
-                        <md-button class="md-icon-button" aria-label="Share">
-                            <md-icon md-svg-icon="share"></md-icon>
-                        </md-button>
-                    </md-card-actions>
-                </md-card-content>
-            </md-card>
+
+        <md-card>
+            <md-card-title>
+                <md-card-title-text>
+                    <span class="md-headline">Statistic</span>
+                    <span class="md-subhead">Learn about your store</span>
+                </md-card-title-text>
+            </md-card-title>
+            <md-card-content layout="row" layout-align="space-between">
+                <md-progress-circular md-mode="indeterminate" md-diameter="196"></md-progress-circular>
+                <md-card-actions layout="column">
+                    <md-button class="md-icon-button" aria-label="Favorite">
+                        <md-icon md-svg-icon="favorite"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Settings">
+                        <md-icon md-svg-icon="menu"></md-icon>
+                    </md-button>
+                    <md-button class="md-icon-button" aria-label="Share">
+                        <md-icon md-svg-icon="share"></md-icon>
+                    </md-button>
+                </md-card-actions>
+            </md-card-content>
+        </md-card>
         </div>
         <div flex-xs flex-gt-xs="50" layout="column">
             <md-card>
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Card with image</span>
-                        <span class="md-subhead">Small</span>
+                        <span class="md-headline">Create product</span>
+                        <span class="md-subhead">Create new product in your store</span>
                     </md-card-title-text>
                     <md-card-title-media>
                         <div class="md-media-sm card-media"></div>
                     </md-card-title-media>
                 </md-card-title>
                 <md-card-actions layout="row" layout-align="end center">
-                    <md-button>Action 1</md-button>
-                    <md-button>Action 2</md-button>
+                    <md-button>Create</md-button>
+                    <md-button>Help</md-button>
                 </md-card-actions>
             </md-card>
             <md-card>
                 <md-card-title>
                     <md-card-title-text>
-                        <span class="md-headline">Card with image</span>
-                        <span class="md-subhead">Medium</span>
+                        <span class="md-headline">My store</span>
+                        <span class="md-subhead">Info about your plan</span>
                     </md-card-title-text>
                     <md-card-title-media>
                         <div class="md-media-md card-media"></div>
                     </md-card-title-media>
                 </md-card-title>
-                <md-card-actions layout="row" layout-align="end center">
-                    <md-button>Action 1</md-button>
-                    <md-button>Action 2</md-button>
-                </md-card-actions>
+            </md-card>
+        </div>
+        <div flex-xs flex-gt-xs="50" layout="column">
+            <md-card>
+                <md-card-title>
+                    <md-card-title-text>
+                        <span class="md-headline">Online</span>
+                        <span class="md-subhead">Some text</span>
+                    </md-card-title-text>
+                    <md-card-title-media>
+      
+                        <div layout>
+                            <md-switch ng-model="true" aria-label="Switch 1">
+                            </md-switch>
+                        </div>
+                    </md-card-title-media>
+                </md-card-title>
             </md-card>
         </div>
         </md-contenst>
