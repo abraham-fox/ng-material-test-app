@@ -16,7 +16,8 @@
 	</md-toolbar>
 
 	<md-list ng-repeat="menuItem in vm.menuItems | filter:vm.keyword" class="md-clickable">
-		<md-list-item>
+		<md-divider ng-if="menuItem.divider"></md-divider>
+		<md-list-item ng-if="!menuItem.divider">
 			<div class="p6n-section-highlight" ng-if="vm.isSelectedMenuItem(menuItem)"></div>
 
 			<a ui-sref="{{::menuItem.routerState}}" class="md-button md-ink-ripple md-cards-theme sidenav-item-link">
