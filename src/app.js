@@ -18,6 +18,10 @@
             $mdThemingProvider.theme('default')
                 .primaryPalette('blue')
                 .accentPalette('red');
+            
+            $mdThemingProvider.theme('docs-dark', 'default')
+                .primaryPalette('yellow')
+                .dark();
 
             // ui-router
             $urlRouterProvider.otherwise('/dashboard');
@@ -38,7 +42,7 @@
                     templateUrl: 'src/users/create-user.html',
                     controller: 'CreateUserController',
                     controllerAs: 'vm'
-                })               
+                })
                 .state('orderList', {
                     url: '/orders-list',
                     templateUrl: 'src/orders/list.html',
@@ -49,6 +53,12 @@
                     url: '/orders-table',
                     templateUrl: 'src/orders/table.html',
                     controller: 'OrderController',
+                    controllerAs: 'vm'
+                })
+                .state('orderCard', {
+                    url: '/orders-card',
+                    templateUrl: 'src/orders/card.html',
+                    controller: 'OrderCardController',
                     controllerAs: 'vm'
                 });
         })
