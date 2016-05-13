@@ -15,7 +15,6 @@
         self.data = [];
 
         $http.get('random-data.json').then(function successCallbac(response) {
-            console.log('get', response.data);
             self.data = response.data.slice(0, 5);
         });
 
