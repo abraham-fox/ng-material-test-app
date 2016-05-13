@@ -1,0 +1,25 @@
+<md-subheader>
+	Order #123 card / {{ vm.selectedItem.caption }}
+</md-subheader>
+
+<div style="padding: 0px 64px 0px 64px">
+
+	<div ng-repeat="item in vm.items">
+		<div md-whiteframe=1 ng-click="vm.selectItem(item)" ng-if="item.id!==vm.selectedItem.id" class="md-padding">
+			<div layout=row layout-xs=column>
+				<md-icon md-svg-src="dashboard"></md-icon>
+				<span flex=30 style="padding-left:5px;padding-top:5px">{{item.caption}}</span>
+				<span flex=30 style="padding-left:5px;padding-top:5px">More text</span>
+				<span flex></span>
+				<span>Text</span>
+			</div>
+			<p>
+				{{item.text}}
+			</p>
+		</div>
+
+		<div md-whiteframe=5 ng-if="item.id===vm.selectedItem.id" style="margin-left: -20px; margin-right: -20px; margin-top: 20px; margin-bottom: 20px">
+			<ng-include src="item.partialSrc" onload="vm.onPartialLoad()"></ng-include>
+		</div>
+	</div>
+</div>

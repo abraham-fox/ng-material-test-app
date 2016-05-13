@@ -52,6 +52,11 @@
 				name: 'Order table',
 				routerState: 'orderTable',
 				icon: 'view-list'
+			},
+			{
+				name: 'Order card',
+				routerState: 'orderCard'
+				//icon: 'view-list'
 			}
 		]
 

@@ -1,0 +1,35 @@
+
+
+<div class="md-padding">
+	<h3 class="md-headline">Nothing to click here!</h3>
+	<p>
+		<md-button class="md-disable">CLICK ME</md-button>
+		<md-button class="md-primary">Click me</md-button>
+		<md-button class="md-primary md-hue-1">Click me</md-button>
+		<md-button class="md-primary md-hue-2">Click me</md-button>
+	</p>
+
+	<section>
+		<md-button md-no-ink class="md-primary">Primary (md-noink)</md-button>
+		<md-button ng-disabled="true" class="md-primary">Disabled</md-button>
+		<md-button class="md-warn">Warn!</md-button>
+	</>
+	
+	<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		<md-button class="md-raised">Button</md-button>
+		<md-button class="md-raised md-primary">Primary</md-button>
+		<md-button ng-disabled="true" class="md-raised md-primary">Disabled</md-button>
+		<md-button class="md-raised md-warn">Warn</md-button>
+	</section>
+
+	<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		<md-button ng-href="{{googleUrl}}" target="_blank">Default Link</md-button>
+		<md-button class="md-primary" ng-href="http://google.com" target="_blank">Primary Link</md-button>
+	</section>
+	<section layout="row" layout-sm="column" layout-align="center center" layout-wrap>
+		<md-button class="md-primary md-hue-1">Primary Hue 1</md-button>
+		<md-button class="md-warn md-raised md-hue-2">Warn Hue 2</md-button>
+		<md-button class="md-accent">Accent</md-button>
+		<md-button class="md-accent md-raised md-hue-1">Accent Hue 1</md-button>
+	</section>
+</div>
